@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: build/libs/studentify-1.0.0.war
-    destination: /opt/tomcat/webapps
+    destination: /opt/tomcat/webapps/studentify.war
 hooks:
   ApplicationStop:
     - location: deploy-scripts/appstop.sh
