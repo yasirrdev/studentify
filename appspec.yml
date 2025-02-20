@@ -1,8 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: build/libs/studentify-1.0.0.war
-    destination: /opt/tomcat/webapps/studentify.war
+  - source: build/libs/studentify.war
+    destination: /opt/tomcat/webapps/
+    file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
     - location: deploy-scripts/appstop.sh
