@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: build/libs/studentify.war
+  - source: studentify.war
     destination: /opt/tomcat/webapps/
     file_exists_behavior: OVERWRITE
 hooks:
