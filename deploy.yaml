@@ -1,4 +1,4 @@
-name: Test Application
+name: Deploy Test Application
 
 on:
   workflow_run:
