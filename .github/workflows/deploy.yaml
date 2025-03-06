@@ -20,9 +20,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
-      - name: Deploy to AWS CodeDeploy
-        run: aws deploy create-deployment --application-name Studentify \
-         --deployment-config-name CodeDeployDefault.OneAtATime \
-         --deployment-group-name Studentify \
-         --github-location repository=${{ github.repository }},commitId=${{ github.sha }} \
-         --description "Studentify Deployment"
+      - name: Deploy AWS CodeDeploy
+        run: |
+          aws deploy create-deployment \
+            --application-name Studentify \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --deployment-group-name Studentify \
+            --github-location "repository=${{ github.repository }},commitId=${{ github.sha }}" \
+            --description "Studentify"
