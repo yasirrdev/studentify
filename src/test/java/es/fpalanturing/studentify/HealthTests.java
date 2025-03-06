@@ -51,6 +51,15 @@ public class HealthTests {
     @Test
     void testSetMessage() {
 
+        // AAA
+        String expectedMessage = "ERROR";
+        // Act
+        health.setMessage(expectedMessage);
+        //Assert
+        assertEquals(expectedMessage, health.getMessage());
+        
+
+
     }
 
     @Test
