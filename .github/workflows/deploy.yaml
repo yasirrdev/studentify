@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows:
       - Test Application
-    types: 
+    types:
       - completed
 
 jobs:
@@ -16,8 +16,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: aws-actions/configure-aws-credentials@v2
         with:
-        # AWS Region
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
+      - name: Deploy to AWS CodeDeploy
+        run: aws deploy create-deployment --application-name Studentify \
+         --deployment-config-name CodeDeployDefault.OneAtATime \
+         --deployment-group-name Studentify \
+         --github-location repository=yasirrdev/studentify,commitId=592d6d5f3f2808fc3cea21755a3bb790f8c130b6 \
+         --description "Studentify Deployment" \
