@@ -20,6 +20,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
+      - name: Create CodeDeplo
+        run: |
+          aws deploy create-application \
+            --application-name Studentify \
+            --compute-platform Server || echo "La aplicacion ya existe"    
       - name: Deploy AWS CodeDeploy
         run: |
           aws deploy create-deployment \
