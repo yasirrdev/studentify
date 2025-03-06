@@ -26,6 +26,6 @@ jobs:
             --application-name Studentify \
             --deployment-config-name CodeDeployDefault.OneAtATime \
             --deployment-group-name Studentify \
-            --revision "revisionType=GitHub,githubLocation={repository=${{ github.repository }},commitId=${{ github.sha }}}" \
-            --description "Studentify Deployment"
+            --revision "revisionType=GitHub,gitHubLocation={repository=${{ github.repository }},commitId=${{ github.sha }}}" \
+            --description "Studentify"
 
