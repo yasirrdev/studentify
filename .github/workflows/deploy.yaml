@@ -24,5 +24,5 @@ jobs:
         run: aws deploy create-deployment --application-name Studentify \
          --deployment-config-name CodeDeployDefault.OneAtATime \
          --deployment-group-name Studentify \
-         --github-location github.repository=yasirrdev/studentify,commitId=592d6d5f3f2808fc3cea21755a3bb790f8c130b6 \
+         --github-location repository=${github.repository},commitId=592d6d5f3f2808fc3cea21755a3bb790f8c130b6 \
          --description "Studentify Deployment" \
