@@ -3,7 +3,7 @@ name: Deploy Test Application
 on:
   workflow_run:
     workflows:
-      - "Test Application"
+      - Test Application
     types: 
       - completed
 
