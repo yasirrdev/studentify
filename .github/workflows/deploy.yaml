@@ -23,10 +23,12 @@ jobs:
    
       - name: Deploy AWS CodeDeploy
         run: 
-          aws deploy create-deployment --application-name Studentify Deploy \
+          aws deploy create-deployment \
+            --application-name "StudentifyDeploy" \
             --deployment-config-name CodeDeployDefault.OneAtATime \
             --deployment-group-name StudentifyDeploy \
-            --github-location repository=${{ github.repository }},commitId=${{ github.sha }} \
+            --github-location "repository=${{ github.repository }},commitId=${{ github.sha }}" \
             --region us-east-1 \
             --description "Studentify Deploy"
+
 
