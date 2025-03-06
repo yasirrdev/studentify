@@ -2,8 +2,10 @@ name: Deploy Test Application
 
 on:
   workflow_run:
-    workflows: ["Run tests"]
-    types: [completed]
+    workflows:
+      - "Test Application"
+    types: 
+      - completed
 
 jobs:
   deploy:
