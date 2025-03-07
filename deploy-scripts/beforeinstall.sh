@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo apt-get update -y
-sudo apt-get install -y openjdk-21-jdk
+rm -f /opt/tomcat/webapps/studentify.war
+
 cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
 chmod +x gradlew
 ./gradlew build

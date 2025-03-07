@@ -24,12 +24,13 @@ jobs:
       - name: Deploy AWS CodeDeploy
         run: |
           aws deploy create-deployment \
-            --application-name Studentify \
+            --application-name Studentify-Deploy \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --deployment-group-name Studentify \
+            --deployment-group-name Studentify-Deploy \
             --github-location "repository=${{ github.repository }},commitId=${{ github.sha }}" \
             --region us-east-1 \
             --description "Studentify Deploy"
+            --file-exists-behavior OVERWRITE
 
 
 
