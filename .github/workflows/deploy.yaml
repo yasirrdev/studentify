@@ -21,7 +21,6 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
       - name: Deploy AWS CodeDeploy
-      #forzar commit
         run: |
           aws deploy create-deployment \
             --application-name Studentify-Deploy \
