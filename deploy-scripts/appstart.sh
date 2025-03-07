@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl start tomcat
+systemctl start tomcat.service
