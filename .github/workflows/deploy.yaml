@@ -25,9 +25,9 @@ jobs:
       #hola
         run: |
           aws deploy create-deployment \
-            --application-name "Demo" \
+            --application-name Studentify \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --deployment-group-name Backend \
+            --deployment-group-name Studentify \
             --github-location "repository=${{ github.repository }},commitId=${{ github.sha }}" \
             --region us-east-1 \
             --description "Studentify Deploy"
